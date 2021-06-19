@@ -1,9 +1,9 @@
-const { mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
     name: String,
     description: String,
-    imageUrl: String,
+    imageUrl: {type: String, default: "http://localhost:4001/uploads/product-icon.svg"},
     unitPrice: Number,
     quantity: Number,
     categoryId: {type: mongoose.Schema.ObjectId, ref: "productCategory"},
